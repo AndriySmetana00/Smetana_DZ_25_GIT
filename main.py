@@ -1,6 +1,8 @@
 print('Good morning!')
 
 
+
+
 def read_file():
   try:
       with open('save_to_file.txt', 'r', encoding='utf-8') as file:
@@ -13,6 +15,13 @@ def read_file():
 print(read_file())
 
 
+def save_to_file(n):
+    with open('save_to_file.txt', 'w', encoding='utf-8') as file:
+        file.write(str(n))
+    return n
+
+
+num = 0
 while True:
     print('Possible actions:')
     print('1 - enter number\n2-change number\n3- zero out\n4-quit')
@@ -31,3 +40,6 @@ while True:
             print('Wrong choice! Please, enter 1, 2, 3 or 4')
     except ValueError:
         print('Please, enter integer !!!')
+
+
+print(save_to_file(num))
