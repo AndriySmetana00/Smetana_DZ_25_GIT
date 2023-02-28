@@ -1,6 +1,17 @@
 print('Good morning!')
 
 
+def read_file():
+  try:
+      with open('save_to_file.txt', 'r', encoding='utf-8') as file:
+          res = file.readlines()
+      return res
+  except FileNotFoundError:
+      print('File not found')
+
+
+print(read_file())
+
 
 while True:
     print('Possible actions:')
